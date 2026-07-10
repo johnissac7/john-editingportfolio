@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
   return (
@@ -9,13 +10,8 @@ export const Hero: React.FC = () => {
         THE ORGANIC MESH GRADIENT
         =========================================
       */}
-      {/* 1. Top-Left Lobe */}
       <div className="absolute top-[38%] left-[42%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#EBBAB0] rounded-full blur-[100px] opacity-[0.85] pointer-events-none z-0" />
-
-      {/* 2. Bottom-Right Lobe */}
       <div className="absolute top-[62%] left-[58%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#EBBAB0] rounded-full blur-[100px] opacity-[0.85] pointer-events-none z-0" />
-
-      {/* 3. Central Bridge */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-[#E2AD9F] rounded-full blur-[90px] opacity-[0.70] pointer-events-none z-0" />
 
       {/* =========================================
@@ -58,25 +54,30 @@ export const Hero: React.FC = () => {
         </p>
 
         {/* =========================================
-          PERFECTED GLASSMORPHIC BUTTON
+          THE CAMOUFLAGED LENS BUTTON
           =========================================
         */}
-        <button
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
           className="
-            mt-14 px-12 py-[18px] rounded-full flex items-center gap-6 group transition-all duration-500
-            bg-gradient-to-b from-white/25 to-white/5
-            backdrop-blur-[16px] backdrop-saturate-[1.2]
+            mt-14 px-12 py-5 rounded-full flex items-center gap-5 group 
+            bg-white/5 
+            backdrop-blur-md
             border border-white/20
-            shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_8px_32px_rgba(0,0,0,0.04)]
-            hover:from-white/30 hover:to-white/10 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_8px_32px_rgba(0,0,0,0.08)]
+            shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.5)]
+            hover:bg-white/10 hover:border-white/30 
+            hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.7)]
+            transition-all duration-500
           "
         >
-          {/* Text color changed to a soft graphite instead of harsh black */}
-          <span className="text-[11px] font-medium tracking-[0.3em] uppercase text-[#2A2826] mt-[2px] ml-2">
+          {/* Subtle Dark Charcoal Text */}
+          <span className="text-[11.5px] font-semibold tracking-[0.25em] uppercase text-[#1c1c1c] mt-[2px] ml-2">
             Hire Me
           </span>
           <svg
-            className="w-5 h-5 text-[#2A2826] group-hover:translate-x-1 transition-transform duration-500"
+            className="w-5 h-5 text-[#1c1c1c] group-hover:translate-x-1 transition-transform duration-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -84,11 +85,11 @@ export const Hero: React.FC = () => {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={1}
+              strokeWidth={1.2}
               d="M17 8l4 4m0 0l-4 4m4-4H3"
             />
           </svg>
-        </button>
+        </motion.button>
       </div>
     </section>
   );

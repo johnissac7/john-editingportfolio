@@ -2,17 +2,22 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // Imported Next.js Image component
 
 export const Header: React.FC = () => {
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-3xl font-bold tracking-tighter text-zinc-900"
-        >
-          J.
+        {/* Logo using the image from the public folder */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/jo-png.png"
+            alt="Jo Logo"
+            width={40} // Adjust width as needed for your specific image
+            height={40} // Adjust height as needed
+            priority // Prioritizes loading this image since it's above the fold
+            className="object-contain"
+          />
         </Link>
 
         {/* Center Navigation - Hidden on small screens for mobile responsiveness */}
