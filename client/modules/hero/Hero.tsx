@@ -34,10 +34,7 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[100dvh] bg-[#f2eff0] overflow-hidden select-none">
       
-      {/* Changed: 
-        - `md:top-0` completely eliminates the top gap on desktop screens.
-        - `md:h-[95vh]` ensures it extends deep down the viewport while keeping the editorial width constraint (`md:w-[90vw]`).
-      */}
+  
       <div 
         className={`absolute w-full h-auto 
           md:w-[90vw] md:h-[95vh] md:top-0 md:left-1/2 md:-translate-x-1/2
