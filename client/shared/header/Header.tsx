@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import MobileMenu from "./MobileMenu";
 import DesktopNav from "./DesktopNav";
+import MobileMenu from "./MobileMenu";
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -24,19 +24,19 @@ export const Header: React.FC = () => {
   return (
     <header
       data-scrolled={isScrolled}
-      /* 
-        ULTRA-SLIM HEIGHT MATRIX:
-        - Initial: h-[52px] (Sleek capsule bar)
-        - Scrolled: data-[scrolled=true]:h-[44px] (Razor-thin frame)
+      /* - Stays flat, pinned to the top, and spans full-bleed (w-full).
+        - Uses a razor-thin border-b with ultra-low opacity black.
+        - Changes background from transparent/semi-translucent to slightly denser on scroll.
       */
-      className="group/header fixed inset-x-0 mx-auto z-50 select-none w-[92vw] max-w-7xl rounded-full border border-black/[0.04] bg-[#ECE8E9]/70 backdrop-blur-md transition-all duration-300 ease-out [transform:translateZ(0)]
-        top-4 h-[52px]
-        data-[scrolled=true]:top-3 data-[scrolled=true]:h-[44px] data-[scrolled=true]:bg-[#ECE8E9]/90 data-[scrolled=true]:backdrop-blur-xl data-[scrolled=true]:border-black/[0.08] data-[scrolled=true]:shadow-sm"
+      className="group/header fixed top-0 left-0 w-full z-50 select-none bg-[#F2EFF0]/60 backdrop-blur-md border-b border-black/[0.04] transition-all duration-300 ease-out [transform:translateZ(0)]
+        h-[76px] data-[scrolled=true]:h-[64px] data-[scrolled=true]:bg-[#F2EFF0]/90 data-[scrolled=true]:backdrop-blur-xl"
     >
-      <DesktopNav
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-      />
+      <div className="w-full h-full max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <DesktopNav
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
+      </div>
 
       <MobileMenu
         isMobileMenuOpen={isMobileMenuOpen}

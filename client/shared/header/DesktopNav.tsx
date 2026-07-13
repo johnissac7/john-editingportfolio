@@ -33,35 +33,41 @@ export default function DesktopNav({
       </Link>
 
       <nav className="hidden md:flex items-center gap-10 font-sans text-[11px] font-semibold tracking-[0.16em] uppercase">
-  <Link
-    href="#work"
-    className="relative py-2 text-zinc-900 transition-colors duration-300"
-  >
-    Work
-    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-zinc-900 rounded-full" />
-  </Link>
+        <Link
+          href="#work"
+          className="relative py-2 text-zinc-900 transition-colors duration-300"
+        >
+          Home
+          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-zinc-900 rounded-full" />
+        </Link>
 
-  <Link
-    href="#services"
-    className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-  >
-    Services
-  </Link>
+        <Link
+          href="#services"
+          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+        >
+          About
+        </Link>
 
-  <Link
-    href="#about"
-    className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-  >
-    About
-  </Link>
+        <Link
+          href="#about"
+          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+        >
+          Services
+        </Link>
 
-  <Link
-    href="#contact"
-    className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-  >
-    Contact
-  </Link>
-</nav>
+        <Link
+          href="#contact"
+          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+        >
+          Skills
+        </Link>
+        <Link
+          href="#contact"
+          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+        >
+          Contact
+        </Link>
+      </nav>
 
       {/* Far Right Desktop Social Links */}
       <DesktopSocials />
