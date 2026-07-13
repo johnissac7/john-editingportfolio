@@ -5,6 +5,7 @@ import { FeaturedReelsSection } from "@/modules/FeaturedReelsSection";
 import { MotionGraphicsSection } from "@/modules/MotionGraphicsSection";
 import { HowIWorkSection } from "@/modules/HowIWorkSection";
 import { ContactSection } from "@/modules/ContactSection";
+import { Footer } from "@/shared/footer/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       {/* <ToolsSection /> */}
       <HowIWorkSection />
       <ContactSection />
+      <Footer />
     </>
   );
 }

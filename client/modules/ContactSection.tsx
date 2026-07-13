@@ -4,14 +4,13 @@ import React from "react";
 
 export const ContactSection: React.FC = () => {
   return (
-    // Matches the exact padding and background logic of the previous sections
-    <section className="bg-[#F2EFF0] pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white">
+    // Added top border line (border-t border-black/10) to clearly separate the section
+    <section className="bg-[#F2EFF0] border-t border-black/10 pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* =========================================
             TWO-COLUMN EDITORIAL GRID
-            Matches the 7/12 & 5/12 split of Motion Graphics
             ========================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* =========================================
               LEFT COLUMN (7/12): Typography & Socials
               ========================================= */}
@@ -27,7 +26,7 @@ export const ContactSection: React.FC = () => {
               </span>
             </div>
 
-            {/* Hero Heading - Scaled to match your established 60px rule */}
+            {/* Hero Heading */}
             <h2 className="text-[44px] md:text-[52px] lg:text-[60px] font-bold tracking-tight leading-[1.05] text-zinc-900 mb-6 md:mb-8">
               <span className="block">Let's create</span>
               <span className="block">something</span>
@@ -125,7 +124,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Gmail */}
               <a
-                href="mailto:hello@johnissac.com"
+                href="mailto:jijohnissac@gmail.com"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
@@ -148,20 +147,22 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* =========================================
-              RIGHT COLUMN (5/12): Contact Info
-              Uses the 'border-l' logic from HowIWork for structure
+              RIGHT COLUMN (5/12): Interactive Contact Card
               ========================================= */}
-          <div className="lg:col-span-5 flex flex-col justify-center h-full pt-12 lg:pt-8 lg:border-l lg:border-black/10 lg:pl-10 xl:pl-16 border-t border-black/10 lg:border-t-0 mt-4 lg:mt-0">
-            <div className="max-w-[340px]">
-              {/* Block 1: Email */}
-              <div className="flex items-start gap-5">
-                <div className="mt-0.5 text-[#B95D43]">
+          <div className="lg:col-span-5 flex flex-col mt-10 lg:mt-0">
+            <div className="bg-[#FCFCFC]/80 backdrop-blur-md rounded-[1.5rem] md:rounded-[2rem] border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-6 md:p-8 flex flex-col w-full max-w-[500px] ml-auto">
+              {/* Row 1: Email */}
+              <a
+                href="mailto:hello@johnissac.com"
+                className="group flex items-center gap-5 pb-6 border-b border-black/5 outline-none"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#B95D43]/10 flex items-center justify-center text-[#B95D43] shrink-0 transition-transform duration-300 group-hover:scale-105">
                   <svg
-                    className="w-6 h-6"
+                    className="w-5 h-5 md:w-6 md:h-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeWidth="1.25"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
@@ -169,46 +170,127 @@ export const ContactSection: React.FC = () => {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                   </svg>
                 </div>
-                <div className="flex flex-col gap-1.5">
-                  <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
+                <div className="flex-1 flex flex-col gap-1">
+                  <p className="text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase text-zinc-500">
                     Email
                   </p>
-                  <a
-                    href="mailto:hello@johnissac.com"
-                    className="text-[17px] md:text-[19px] text-zinc-900 hover:text-[#B95D43] transition-colors"
-                  >
+                  <p className="text-[15px] md:text-[17px] font-medium text-zinc-900 transition-colors duration-300 group-hover:text-[#B95D43]">
                     hello@johnissac.com
-                  </a>
+                  </p>
                 </div>
-              </div>
-
-              {/* Thin Divider */}
-              <hr className="my-10 border-black/5 w-full" />
-
-              {/* Block 2: Let's Work Together */}
-              <div className="flex items-start gap-5">
-                <div className="mt-0.5 text-[#B95D43]">
+                <div className="text-zinc-400 group-hover:text-[#B95D43] group-hover:translate-x-1 transition-all duration-300">
                   <svg
-                    className="w-6 h-6"
+                    className="w-4 h-4 md:w-5 md:h-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeWidth="1.25"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="m22 2-7 20-4-9-9-4Z"></path>
-                    <path d="M22 2 11 13"></path>
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </div>
-                <div className="flex flex-col gap-3">
-                  <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
-                    Let's Work Together
+              </a>
+
+              {/* Row 2: Let's Collaborate */}
+              <a
+                href="#"
+                className="group flex items-center gap-5 py-6 border-b border-black/5 outline-none"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#B95D43]/10 flex items-center justify-center text-[#B95D43] shrink-0 transition-transform duration-300 group-hover:scale-105">
+                  <svg
+                    className="w-5 h-5 md:w-6 md:h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M23 7l-7 5 7 5V7z"></path>
+                    <rect
+                      x="1"
+                      y="5"
+                      width="15"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                  </svg>
+                </div>
+                <div className="flex-1 flex flex-col gap-1">
+                  <p className="text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase text-zinc-500">
+                    Let's Collaborate
                   </p>
-                  <p className="text-[14px] md:text-[15px] leading-[1.8] text-zinc-900">
-                    Available for freelance projects, short-form content, motion
-                    graphics, and creative collaborations.
+                  <p className="text-[15px] md:text-[17px] font-medium text-zinc-900 transition-colors duration-300 group-hover:text-[#B95D43]">
+                    Open for exciting video projects
                   </p>
+                </div>
+                <div className="text-zinc-400 group-hover:text-[#B95D43] group-hover:translate-x-1 transition-all duration-300">
+                  <svg
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </div>
+              </a>
+
+              {/* Row 3: What I Do */}
+              <div className="group flex items-center gap-5 pt-6 outline-none cursor-default">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#B95D43]/10 flex items-center justify-center text-[#B95D43] shrink-0 transition-transform duration-300 group-hover:scale-105">
+                  <svg
+                    className="w-5 h-5 md:w-6 md:h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M19.82 2H4.18C2.97 2 2 2.97 2 4.18v15.64C2 21.03 2.97 22 4.18 22h15.64c1.21 0 2.18-.97 2.18-2.18V4.18C22 2.97 21.03 2 19.82 2z"></path>
+                    <path d="M7 2v20"></path>
+                    <path d="M17 2v20"></path>
+                    <path d="M2 12h20"></path>
+                    <path d="M2 7h5"></path>
+                    <path d="M2 17h5"></path>
+                    <path d="M17 17h5"></path>
+                    <path d="M17 7h5"></path>
+                  </svg>
+                </div>
+                <div className="flex-1 flex flex-col gap-1">
+                  <p className="text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase text-zinc-500">
+                    What I Do
+                  </p>
+                  <p className="text-[14px] md:text-[15px] font-medium text-zinc-900 flex items-center flex-wrap">
+                    Editing{" "}
+                    <span className="text-[#B95D43] mx-2 text-[10px]">•</span>{" "}
+                    Motion Design{" "}
+                    <span className="text-[#B95D43] mx-2 text-[10px]">•</span>{" "}
+                    Storytelling
+                  </p>
+                </div>
+                <div className="text-zinc-400 group-hover:text-[#B95D43] group-hover:translate-x-1 transition-all duration-300">
+                  <svg
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
                 </div>
               </div>
             </div>
@@ -216,7 +298,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* =========================================
-            BOTTOM FOOTER
+            BOTTOM FOOTER DIVIDER
             ========================================= */}
         <div className="mt-20 md:mt-28 pt-8 border-t border-black/10 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start gap-3 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-900">

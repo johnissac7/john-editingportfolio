@@ -98,7 +98,7 @@ export const MotionGraphicsSection: React.FC = () => {
           {/* =========================================
               RIGHT COLUMN: Details & Metadata (5/12 width)
               ========================================= */}
-          <div className="lg:col-span-5 flex flex-col pt-1 lg:pt-2 lg:mt-[76px]">
+          <div className="lg:col-span-5 flex flex-col pt-1 lg:pt-2 lg:mt-[32px]">
             {/* Top Label */}
             <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#B95D43] mb-5">
               Featured Project
