@@ -13,7 +13,7 @@ export default function DesktopNav({
   setIsMobileMenuOpen,
 }: DesktopNavProps) {
   return (
-    <div className="w-full h-full px-6 md:px-10 flex items-center justify-between">
+    <div className="relative w-full h-full px-6 md:px-10 flex items-center justify-between">
       {/* Left Side: Brand Wordmark */}
       <Link
         href="/"
@@ -32,42 +32,40 @@ export default function DesktopNav({
         </div>
       </Link>
 
-      <nav className="hidden md:flex items-center gap-10 font-sans text-[11px] font-semibold tracking-[0.16em] uppercase">
-        <Link
-          href="#work"
-          className="relative py-2 text-zinc-900 transition-colors duration-300"
-        >
-          Home
-          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-zinc-900 rounded-full" />
-        </Link>
-
-        <Link
-          href="#services"
-          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-        >
-          About
-        </Link>
-
-        <Link
-          href="#about"
-          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-        >
-          Services
-        </Link>
-
-        <Link
-          href="#contact"
-          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-        >
-          Skills
-        </Link>
-        <Link
-          href="#contact"
-          className="relative py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
-        >
-          Contact
-        </Link>
-      </nav>
+      <ol className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.16em] uppercase">
+        <li>
+          <a
+            href="#about"
+            className="group flex items-center gap-1.5 py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+          >
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#work"
+            className="group flex items-center gap-1.5 py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+          >
+            <span>Work</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#services"
+            className="group flex items-center gap-1.5 py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+          >
+            <span>Services</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            className="group flex items-center gap-1.5 py-2 text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300"
+          >
+            <span>Contact</span>
+          </a>
+        </li>
+      </ol>
 
       {/* Far Right Desktop Social Links */}
       <DesktopSocials />

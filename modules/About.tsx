@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const About: React.FC = () => {
   return (
-    <section className="relative w-full py-24 md:py-32 bg-[#F2EFF0] text-[#1D1D1D] overflow-hidden">
+    <section id="about" className="relative w-full py-24 md:py-32 bg-[#F2EFF0] text-[#1D1D1D] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
         {/* =========================================
             LEFT COLUMN: IMAGE
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
             </span>
             <div className="w-12 h-[1px] bg-[#D2AEA3]"></div>
             <span className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
-              02
+              01
             </span>
           </div>
 

@@ -5,7 +5,7 @@ import React from "react";
 export const ContactSection: React.FC = () => {
   return (
     // Added top border line (border-t border-black/10) to clearly separate the section
-    <section className="bg-[#F2EFF0] border-t border-black/10 pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white">
+    <section id="contact" className="bg-[#F2EFF0] border-t border-black/10 pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* =========================================
             TWO-COLUMN EDITORIAL GRID
@@ -18,7 +18,7 @@ export const ContactSection: React.FC = () => {
             {/* Section Label */}
             <div className="flex items-center gap-4 mb-8 md:mb-10">
               <span className="text-[#B95D43] text-[11px] font-bold font-mono tracking-widest">
-                04
+                05
               </span>
               <span className="w-8 h-px bg-black/10"></span>
               <span className="text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase text-zinc-800">
@@ -51,7 +51,9 @@ export const ContactSection: React.FC = () => {
             <div className="flex flex-wrap items-center gap-6 sm:gap-8">
               {/* WhatsApp (First) */}
               <a
-                href="#"
+                href="https://wa.me/919345269742"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
@@ -74,7 +76,9 @@ export const ContactSection: React.FC = () => {
 
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
@@ -99,7 +103,9 @@ export const ContactSection: React.FC = () => {
 
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/john-issac-3a916041a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
@@ -153,7 +159,7 @@ export const ContactSection: React.FC = () => {
             <div className="bg-[#FCFCFC]/80 backdrop-blur-md rounded-[1.5rem] md:rounded-[2rem] border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-6 md:p-8 flex flex-col w-full max-w-[500px] ml-auto">
               {/* Row 1: Email */}
               <a
-                href="mailto:hello@johnissac.com"
+                href="mailto:jijohnissac@gmail.com"
                 className="group flex items-center gap-5 pb-6 border-b border-black/5 outline-none"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#B95D43]/10 flex items-center justify-center text-[#B95D43] shrink-0 transition-transform duration-300 group-hover:scale-105">
@@ -175,7 +181,7 @@ export const ContactSection: React.FC = () => {
                     Email
                   </p>
                   <p className="text-[15px] md:text-[17px] font-medium text-zinc-900 transition-colors duration-300 group-hover:text-[#B95D43]">
-                    hello@johnissac.com
+                    jijohnissac@gmail.com
                   </p>
                 </div>
                 <div className="text-zinc-400 group-hover:text-[#B95D43] group-hover:translate-x-1 transition-all duration-300">
@@ -196,7 +202,9 @@ export const ContactSection: React.FC = () => {
 
               {/* Row 2: Let's Collaborate */}
               <a
-                href="#"
+                href="https://wa.me/919345269742"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-5 py-6 border-b border-black/5 outline-none"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#B95D43]/10 flex items-center justify-center text-[#B95D43] shrink-0 transition-transform duration-300 group-hover:scale-105">

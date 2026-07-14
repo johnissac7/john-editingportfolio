@@ -1,6 +1,5 @@
 export default function DesktopSocials() {
   return (
-    
     <div className="hidden md:flex items-center gap-5 border-l border-zinc-900/10 pl-5 h-5">
       {/* Mail / Email Link */}
       <a
@@ -22,9 +21,30 @@ export default function DesktopSocials() {
         </svg>
       </a>
 
+      {/* WhatsApp Link */}
+      <a
+        href="https://wa.me/919345269742"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+        aria-label="WhatsApp"
+      >
+        <svg 
+          className="w-4 h-4" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="1.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+        </svg>
+      </a>
+
       {/* Instagram Link */}
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
@@ -47,7 +67,7 @@ export default function DesktopSocials() {
 
       {/* LinkedIn Link */}
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/in/john-issac-3a916041a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"

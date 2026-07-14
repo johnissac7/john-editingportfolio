@@ -15,21 +15,49 @@ export default function MobileMenu({
         isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      {/* Navigation Section */}
-      <div className="flex flex-col gap-8 mt-24 font-serif text-4xl font-light tracking-tight text-zinc-900">
-        <Link href="#work" onClick={() => setIsMobileMenuOpen(false)}>
-          Work
-        </Link>
-        <Link href="#services" onClick={() => setIsMobileMenuOpen(false)}>
-          Services
-        </Link>
-        <Link href="#about" onClick={() => setIsMobileMenuOpen(false)}>
-          About
-        </Link>
-        <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-          Contact
-        </Link>
-      </div>
+      {/* Navigation Section: Ordered list according to page sections */}
+      <ol className="flex flex-col gap-8 mt-24 font-serif text-4xl font-light tracking-tight text-zinc-900">
+        <li>
+          <a 
+            href="#about" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-baseline gap-4 hover:text-[#B95D43] transition-colors duration-300"
+          >
+            <span className="text-sm font-sans font-bold tracking-[0.2em] text-[#B95D43] font-mono">01</span>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#work" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-baseline gap-4 hover:text-[#B95D43] transition-colors duration-300"
+          >
+            <span className="text-sm font-sans font-bold tracking-[0.2em] text-[#B95D43] font-mono">02</span>
+            <span>Work</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#services" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-baseline gap-4 hover:text-[#B95D43] transition-colors duration-300"
+          >
+            <span className="text-sm font-sans font-bold tracking-[0.2em] text-[#B95D43] font-mono">03</span>
+            <span>Services</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#contact" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-baseline gap-4 hover:text-[#B95D43] transition-colors duration-300"
+          >
+            <span className="text-sm font-sans font-bold tracking-[0.2em] text-[#B95D43] font-mono">04</span>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ol>
 
       {/* SWAPPED: Pure Social Links Block (Available indicator completely removed) */}
       <div className="border-t border-black/10 pt-8 pb-4 flex items-center justify-start gap-8 z-50">
@@ -53,9 +81,30 @@ export default function MobileMenu({
           </svg>
         </a>
 
+        {/* WhatsApp Link */}
+        <a
+          href="https://wa.me/919345269742"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+          aria-label="WhatsApp"
+        >
+          <svg
+            className="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+          </svg>
+        </a>
+
         {/* Instagram Link */}
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
@@ -78,7 +127,7 @@ export default function MobileMenu({
 
         {/* LinkedIn Link */}
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/john-issac-3a916041a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
           target="_blank"
           rel="noopener noreferrer"
           className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"

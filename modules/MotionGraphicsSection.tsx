@@ -19,12 +19,12 @@ export const MotionGraphicsSection: React.FC = () => {
 
   return (
     // ADJUSTMENT: Increased top padding (pt-14) to perfectly space it from the previous grid
-    <section className="bg-[#F2EFF0] pt-12 md:pt-14 pb-16 md:pb-20 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
+    <section id="services" className="bg-[#F2EFF0] pt-12 md:pt-14 pb-16 md:pb-20 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Main Section Header */}
         <div className="flex flex-col mb-12 md:mb-16">
           <p className="flex items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase text-zinc-400 mb-4">
-            MY WORK — <span className="text-zinc-950 font-black">04</span>
+            MY WORK — <span className="text-zinc-950 font-black">03</span>
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tighter leading-[1.1] text-zinc-900">
             Motion Graphics

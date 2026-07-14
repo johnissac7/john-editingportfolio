@@ -105,13 +105,13 @@ export const FeaturedReelsSection: React.FC = () => {
 
   return (
     // ADJUSTMENT: Increased bottom padding (pb-14) to give more breathing room
-    <section className="bg-[#F2EFF0] pt-0 pb-12 md:pb-14 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
+    <section id="work" className="bg-[#F2EFF0] pt-0 pb-12 md:pb-14 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 md:mb-14 gap-8 lg:gap-12">
           <div className="flex flex-col gap-3 md:gap-4 max-w-4xl">
             <p className="flex items-center gap-3 text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase text-zinc-400">
-              MY WORK — <span className="text-zinc-950 font-black">03</span>
+              MY WORK — <span className="text-zinc-950 font-black">02</span>
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tighter leading-[1.1] text-zinc-900">
               Featured Reels
