@@ -15,15 +15,15 @@ export default function DesktopNav({
   setIsMobileMenuOpen,
 }: DesktopNavProps) {
   return (
-    // Increased overall height to h-20 (80px) to give the larger logo room to breathe
-    <div className="relative w-full h-20 px-6 md:px-10 flex items-center justify-between">
+    <div className="relative w-full h-20 px-5 md:px-10 flex items-center justify-between">
 
-      {/* Left Side: Brand Wordmark */}
+      {/* =========================================
+          DESKTOP LEFT: Brand Logo
+          ========================================= */}
       <Link
         href="/"
-        className="relative flex items-center group transition-transform duration-300 active:scale-98"
+        className="hidden md:flex relative items-center group transition-transform duration-300 active:scale-98"
       >
-        {/* Logo scaled up significantly to 64px for better visibility */}
         <div className="relative overflow-hidden flex items-center justify-center bg-transparent w-[64px] h-[64px] transition-all duration-300">
           <Image
             src="/jo-png.png"
@@ -36,7 +36,36 @@ export default function DesktopNav({
         </div>
       </Link>
 
-      {/* Center Nav: Text size and tracking remain optimized for editorial style */}
+      {/* =========================================
+          MOBILE LEFT: Floating Action Pill
+          ========================================= */}
+      <div className="md:hidden flex items-center bg-white/50 backdrop-blur-md border border-black/5 rounded-[1.25rem] p-1.5 pr-4 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.05)]">
+
+        {/* Inner Button Wrapper (Mimics the reference image's nested container) */}
+        <div className="flex items-center justify-center w-11 h-11 bg-white rounded-xl shadow-sm border border-black/[0.04]">
+          <HamburgerMenu
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
+        </div>
+
+        {/* Beside Hamburger: Scaled Mobile Logo */}
+        <Link href="/" className="ml-3.5 relative flex items-center justify-center w-8 h-8 active:scale-95 transition-transform">
+          <Image
+            src="/jo-png.png"
+            alt="Jo Logo"
+            width={40}
+            height={40}
+            priority
+            className="object-contain w-full h-full"
+          />
+        </Link>
+
+      </div>
+
+      {/* =========================================
+          CENTER NAV: Desktop Only
+          ========================================= */}
       <ol className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-sans text-[11px] font-bold tracking-[0.15em] uppercase">
         {["About", "Work", "Services", "Contact"].map((item) => (
           <li key={item}>
@@ -50,16 +79,24 @@ export default function DesktopNav({
         ))}
       </ol>
 
-      {/* Far Right Desktop Social Links */}
+      {/* =========================================
+          RIGHT SIDE: Desktop Socials & Desktop Hamburger
+          ========================================= */}
       <div className="flex items-center gap-4">
-        <DesktopSocials />
+        {/* Desktop Socials */}
+        <div className="hidden md:block">
+          <DesktopSocials />
+        </div>
 
-        {/* Mobile Navigation Trigger */}
-        <HamburgerMenu
-          isMobileMenuOpen={isMobileMenuOpen}
-          setIsMobileMenuOpen={setIsMobileMenuOpen}
-        />
+        {/* Desktop Hamburger (Hidden on mobile since it is inside the left pill) */}
+        <div className="hidden md:block">
+          <HamburgerMenu
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
+        </div>
       </div>
+
     </div>
   );
 }

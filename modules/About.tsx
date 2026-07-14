@@ -137,11 +137,10 @@ export const About: React.FC = () => {
           {/* =========================================
               UPDATED CONTACT INFO ROW
               ========================================= */}
-          {/* Centered with Flexbox, darker top border */}
-          <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6 sm:gap-8 border-t border-black/7 pt-8">
+          {/* MOBILE FIX: items-start keeps them perfectly aligned left. sm:items-center keeps your awesome desktop view */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-center w-full gap-5 sm:gap-8 border-t border-black/10 pt-8 mt-2">
             {/* Email */}
             <div className="flex items-center gap-3">
-              {/* Softened icon background to match theme */}
               <div className="w-10 h-10 rounded-md bg-[#EBE7E8] border border-black/5 flex items-center justify-center flex-shrink-0 text-gray-500 shadow-sm">
                 <svg
                   className="w-4 h-4"
@@ -167,7 +166,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            {/* Vertical Separator */}
+            {/* Vertical Separator (Only on Desktop) */}
             <div className="hidden sm:block w-[1px] h-8 bg-black/10"></div>
 
             {/* Contact */}
@@ -197,7 +196,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            {/* Vertical Separator */}
+            {/* Vertical Separator (Only on Desktop) */}
             <div className="hidden sm:block w-[1px] h-8 bg-black/10"></div>
 
             {/* Location */}
