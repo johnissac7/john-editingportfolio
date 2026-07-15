@@ -63,10 +63,6 @@ export default function DesktopNav({
           ========================================= */}
       <div className="hidden md:flex items-center gap-4">
         <DesktopSocials />
-        <HamburgerMenu
-          isMobileMenuOpen={isMobileMenuOpen}
-          setIsMobileMenuOpen={setIsMobileMenuOpen}
-        />
       </div>
 
 
@@ -75,7 +71,7 @@ export default function DesktopNav({
           - Combines Logo + Hamburger in one physical container.
           - Floating offset matches page margins seamlessly.
           ========================================= */}
-      <div className="md:hidden fixed top-4 right-4 flex items-center gap-3 bg-white/75 backdrop-blur-lg border border-black/[0.08] rounded-full pl-2 pr-4 py-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+      <div className="md:hidden fixed top-4 right-4 flex items-center gap-3 bg-white/25 backdrop-blur-lg border border-black/[0.08] rounded-full pl-2 pr-4 py-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
         {/* Round Logo Icon */}
         <Link 
           href="/" 
