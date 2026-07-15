@@ -55,10 +55,6 @@ export default function DesktopNav({
           </li>
         ))}
       </ol>
-
-      {/* =========================================
-          DESKTOP RIGHT: Socials & Basic Trigger
-          ========================================= */}
       <div className="hidden md:flex items-center gap-4">
         <DesktopSocials />
       </div>
