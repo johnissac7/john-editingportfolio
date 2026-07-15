@@ -16,30 +16,28 @@ export default function DesktopNav({
 }: DesktopNavProps) {
   return (
     <div className="relative w-full h-full flex items-center justify-between pointer-events-auto">
-
       {/* =========================================
           DESKTOP LEFT: Brand Logo & Wordmark (Hidden on Mobile)
           ========================================= */}
       <Link
         href="/"
-        className="hidden md:flex items-center gap-3 group transition-transform duration-300 active:scale-98"
+        className="hidden md:flex items-center gap-3.5 group transition-transform duration-300 active:scale-98"
       >
-        <div className="relative overflow-hidden flex items-center justify-center bg-transparent w-[52px] h-[52px] transition-all duration-300">
+        {/* 
+    DIALED BACK DESKTOP LOGO:
+    - Reduced from 80px to a balanced 62px (~22.5% reduction)
+    - Full-bleed circular crop maintained with object-cover
+  */}
+        <div className="relative overflow-hidden rounded-full flex items-center justify-center bg-transparent w-[62px] h-[62px] transition-all duration-300 border border-black/[0.04]">
           <Image
             src="/jo-png.png"
             alt="Jo Logo"
-            width={64}
-            height={64}
+            width={80}
+            height={80}
             priority
-            className="object-contain w-full h-full"
+            className="object-cover w-full h-full scale-105 transition-all duration-300"
           />
         </div>
-        <span 
-          className="font-sans font-bold tracking-wide text-zinc-900 transition-all duration-300 group-hover:text-zinc-600 text-[16px]"
-          style={{ fontFamily: 'Roboto, sans-serif' }}
-        >
-          JohnIssac
-        </span>
       </Link>
 
       {/* =========================================
@@ -65,7 +63,6 @@ export default function DesktopNav({
         <DesktopSocials />
       </div>
 
-
       {/* =========================================
           MOBILE ONLY: Integrated Right Floating Pill
           - Combines Logo + Hamburger in one physical container.
@@ -73,18 +70,18 @@ export default function DesktopNav({
           ========================================= */}
       <div className="md:hidden fixed top-4 right-4 flex items-center gap-3 bg-white/25 backdrop-blur-lg border border-black/[0.08] rounded-full pl-2 pr-4 py-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
         {/* Round Logo Icon */}
-        <Link 
-          href="/" 
-          className="relative flex items-center justify-center w-10 h-10 overflow-hidden rounded-full border border-black/[0.04] bg-[#F2EFF0]"
+        <Link
+          href="/"
+          className="relative flex items-center justify-center w-[44px] h-[44px] overflow-hidden rounded-full border border-black/[0.04] bg-[#F2EFF0]"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <Image
             src="/jo-png.png"
             alt="Jo Logo"
-            width={40}
-            height={40}
+            width={52}
+            height={52}
             priority
-            className="object-contain w-full h-full"
+            className="object-cover w-full h-full scale-105"
           />
         </Link>
 

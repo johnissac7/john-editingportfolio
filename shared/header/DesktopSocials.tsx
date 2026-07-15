@@ -1,10 +1,10 @@
 export default function DesktopSocials() {
   return (
     <div className="hidden md:flex items-center gap-5 border-l border-zinc-900/10 pl-5 h-5">
-      {/* Mail / Email Link */}
+      {/* Mail / Email Link - Default Zinc -> Hover Orange */}
       <a
         href="mailto:jijohnissac@gmail.com"
-        className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+        className="text-zinc-900/60 hover:text-orange-500 transition-colors duration-300 select-none"
         aria-label="Email JohnIssac"
       >
         <svg 
@@ -21,12 +21,12 @@ export default function DesktopSocials() {
         </svg>
       </a>
 
-      {/* WhatsApp Link */}
+      {/* WhatsApp Link - Default Zinc -> Hover Green */}
       <a
         href="https://wa.me/919345269742"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+        className="text-zinc-900/60 hover:text-emerald-500 transition-colors duration-300 select-none"
         aria-label="WhatsApp"
       >
         <svg 
@@ -42,12 +42,12 @@ export default function DesktopSocials() {
         </svg>
       </a>
 
-      {/* Instagram Link */}
+      {/* Instagram Link - Default Zinc -> Hover Pink */}
       <a
         href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
         target="_blank"
         rel="noopener noreferrer"
-        className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+        className="text-zinc-900/60 hover:text-pink-500 transition-colors duration-300 select-none"
         aria-label="Instagram"
       >
         <svg 
@@ -65,12 +65,12 @@ export default function DesktopSocials() {
         </svg>
       </a>
 
-      {/* LinkedIn Link */}
+      {/* LinkedIn Link - Default Zinc -> Hover Blue */}
       <a
         href="https://www.linkedin.com/in/john-issac-3a916041a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-zinc-900/60 hover:text-zinc-900 transition-colors duration-300 select-none"
+        className="text-zinc-900/60 hover:text-sky-600 transition-colors duration-300 select-none"
         aria-label="LinkedIn"
       >
         <svg 
