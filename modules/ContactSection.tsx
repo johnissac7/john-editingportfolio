@@ -5,7 +5,10 @@ import React from "react";
 export const ContactSection: React.FC = () => {
   return (
     // Added top border line (border-t border-black/10) to clearly separate the section
-    <section id="contact" className="bg-[#F2EFF0] border-t border-black/10 pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white">
+    <section
+      id="contact"
+      className="bg-[#F2EFF0] border-t border-black/10 pt-16 md:pt-24 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden selection:bg-[#B95D43] selection:text-white"
+    >
       <div className="max-w-[1400px] mx-auto w-full">
         {/* =========================================
             TWO-COLUMN EDITORIAL GRID
@@ -49,15 +52,16 @@ export const ContactSection: React.FC = () => {
 
             {/* Social Icons Row */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-              {/* WhatsApp (First) */}
+              {/* WhatsApp */}
               <a
                 href="https://wa.me/919345269742"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
+                {/* Cleaned & streamlined authentic WhatsApp path silhouette */}
                 <svg
-                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#B95D43] transition-colors duration-300"
+                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#25D366] transition-colors duration-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -67,7 +71,7 @@ export const ContactSection: React.FC = () => {
                 >
                   <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
                 </svg>
-                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#B95D43] transition-colors duration-300">
+                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#25D366] transition-colors duration-300">
                   WhatsApp
                 </span>
               </a>
@@ -81,20 +85,54 @@ export const ContactSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
               >
+                {/* 
+      Defines a linear gradient within the SVG to perfectly match 
+      Instagram's iconic brand color spectrum injection.
+    */}
                 <svg
-                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#B95D43] transition-colors duration-300"
+                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 transition-colors duration-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="1.25"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  style={{
+                    maskImage:
+                      "linear-gradient(to top right, #f9ce34, #ee2a7b, #6228d7)",
+                    WebkitMaskImage:
+                      "linear-gradient(to top right, #f9ce34, #ee2a7b, #6228d7)",
+                  }}
                 >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                  {/* Dynamic inline style swaps stroke color to use the gradient on parent hover */}
+                  <g className="stroke-zinc-900 group-hover:stroke-[url(#insta-gradient)] transition-colors duration-300">
+                    <defs>
+                      <linearGradient
+                        id="insta-gradient"
+                        x1="100%"
+                        y1="0%"
+                        x2="0%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#6228d7" />
+                        <stop offset="50%" stopColor="#ee2a7b" />
+                        <stop offset="100%" stopColor="#f9ce34" />
+                      </linearGradient>
+                    </defs>
+                    <rect
+                      width="20"
+                      height="20"
+                      x="2"
+                      y="2"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                  </g>
                 </svg>
-                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#B95D43] transition-colors duration-300">
+                {/* Text color transition matches the core brand red/magenta node */}
+                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#E1306C] transition-colors duration-300">
                   Instagram
                 </span>
               </a>
@@ -109,7 +147,7 @@ export const ContactSection: React.FC = () => {
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
-                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#B95D43] transition-colors duration-300"
+                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#0077B5] transition-colors duration-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -121,7 +159,7 @@ export const ContactSection: React.FC = () => {
                   <rect width="4" height="12" x="2" y="9"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#B95D43] transition-colors duration-300">
+                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#0077B5] transition-colors duration-300">
                   LinkedIn
                 </span>
               </a>
@@ -134,7 +172,7 @@ export const ContactSection: React.FC = () => {
                 className="group flex flex-col items-center gap-3 outline-none"
               >
                 <svg
-                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#B95D43] transition-colors duration-300"
+                  className="w-5 h-5 md:w-6 md:h-6 text-zinc-900 group-hover:text-[#EA4335] transition-colors duration-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -145,7 +183,7 @@ export const ContactSection: React.FC = () => {
                   <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                 </svg>
-                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#B95D43] transition-colors duration-300">
+                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 group-hover:text-[#EA4335] transition-colors duration-300">
                   Gmail
                 </span>
               </a>
