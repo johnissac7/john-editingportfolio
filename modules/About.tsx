@@ -7,43 +7,77 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="relative w-full py-24 md:py-32 bg-[#F2EFF0] text-[#1D1D1D] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-        {/* =========================================
-            LEFT COLUMN: IMAGE
-            ========================================= */}
-        <div className="lg:col-span-5 relative w-full aspect-[4/5] md:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-sm">
-          {/* Replace src with your actual image path in the public folder */}
-          <Image
-            src="/myself1.png" // Make sure to add your black & white portrait here
-            alt="JohnIssac Portrait"
-            fill
-            className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
 
         {/* =========================================
-            RIGHT COLUMN: CONTENT
+            MOBILE HERO HEADER: Section Labels & Title
+            Only renders on mobile to give structural authority before the profile grid
             ========================================= */}
-        {/* Shifted up using negative margin on desktop */}
-        <div className="lg:col-span-7 flex flex-col lg:-mt-8">
+        <div className="block lg:hidden flex flex-col">
           {/* Pre-heading */}
           <div className="flex items-center gap-4 mb-5">
-            <span className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
               About Me
             </span>
             <div className="w-12 h-[1px] bg-[#D2AEA3]"></div>
-            <span className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
               01
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1D1D1D] mb-6 flex items-center gap-4">
-            <span>1.</span> Who I am ?
+          <h2 className="text-3xl font-bold tracking-tight text-[#1D1D1D]">
+            Who I am ?
           </h2>
+        </div>
 
-          {/* Intro Paragraph */}
-          <p className="text-xl md:text-[22px] leading-[1.6] text-[#222222] font-medium max-w-2xl mb-8">
+        {/* =========================================
+            LEFT COLUMN: DESKTOP IMAGE / MOBILE PROFILE AVATAR
+            ========================================= */}
+        {/* MOBILE: Changes to an inline-profile component template
+            DESKTOP: Restores to the original aspect-[3/4] full-column grid layout
+        */}
+        <div className="lg:col-span-5 flex lg:block items-center gap-6">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-full lg:h-full lg:aspect-[4/5] md:lg:aspect-[3/4] rounded-full lg:rounded-[2rem] overflow-hidden shadow-sm flex-shrink-0 border border-black/5 lg:border-0">
+            <Image
+              src="/myself1.png"
+              alt="JohnIssac Portrait"
+              fill
+              className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+
+          {/* Mobile Profile Subtext sitting neatly beside the new circular avatar */}
+          <div className="block lg:hidden flex flex-col gap-0.5">
+            <span className="text-base font-bold text-black tracking-tight">JohnIssac</span>
+            <span className="text-xs font-semibold text-[#B95D43] uppercase tracking-wider font-mono">Editor & Designer</span>
+          </div>
+        </div>
+
+        {/* =========================================
+            RIGHT COLUMN: CONTENT SYSTEM
+            ========================================= */}
+        <div className="lg:col-span-7 flex flex-col lg:-mt-8">
+
+          {/* Desktop Only Header (Hidden on Mobile) */}
+          <div className="hidden lg:flex flex-col">
+            <div className="flex items-center gap-4 mb-5">
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
+                About Me
+              </span>
+              <div className="w-12 h-[1px] bg-[#D2AEA3]"></div>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#B95D43]">
+                01
+              </span>
+            </div>
+
+            <h2 className="text-4xl font-bold tracking-tight text-[#1D1D1D] mb-6 flex items-center gap-4">
+              <span>1.</span> Who I am ?
+            </h2>
+          </div>
+
+          {/* Intro Paragraph - Sits beautifully under the profile section on mobile */}
+          <p className="text-[18px] md:text-[22px] leading-[1.6] text-[#222222] font-medium max-w-2xl mb-8 mt-2 lg:mt-0">
             I'm <span className="font-bold text-black">JohnIssac</span>, a
             19-year-old Video Editor and Motion Designer building stories that{" "}
             <span className="border-b-[2px] border-[#B95D43]/40 pb-[2px]">
@@ -101,7 +135,7 @@ export const About: React.FC = () => {
           </div>
 
           {/* Quote Block */}
-          <div className="bg-[#EBE7E8] rounded-xl p-8 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8 shadow-sm border border-black/5">
+          <div className="bg-[#EBE7E8] rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8 shadow-sm border border-black/5">
             {/* Quote Icon */}
             <div className="flex-shrink-0 text-[#B95D43]">
               <svg
@@ -115,14 +149,14 @@ export const About: React.FC = () => {
               </svg>
             </div>
             {/* Quote Text & Signature */}
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10 w-full">
               <p className="text-[15px] md:text-[16px] text-[#4A4A4A] italic leading-relaxed flex-1 text-center md:text-left">
                 Editing is not just what I do,
                 <br />
                 it's how I express, connect, and inspire.
               </p>
               <div className="hidden md:block w-[1px] h-12 bg-[#D2AEA3]/50"></div>
-              {/* Signature Fallback */}
+              {/* Signature */}
               <div className="flex-shrink-0">
                 <span
                   className="font-[cursive] text-2xl text-[#1D1D1D] opacity-80"
@@ -135,103 +169,54 @@ export const About: React.FC = () => {
           </div>
 
           {/* =========================================
-              UPDATED CONTACT INFO ROW
+              CONTACT INFO ROW
               ========================================= */}
-          {/* MOBILE FIX: items-start keeps them perfectly aligned left. sm:items-center keeps your awesome desktop view */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-center w-full gap-5 sm:gap-8 border-t border-black/10 pt-8 mt-2">
             {/* Email */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-md bg-[#EBE7E8] border border-black/5 flex items-center justify-center flex-shrink-0 text-gray-500 shadow-sm">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">
-                  Email
-                </span>
-                <span className="text-[11px] font-semibold text-[#1D1D1D]">
-                  jijohnissac@gmail.com
-                </span>
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">Email</span>
+                <span className="text-[11px] font-semibold text-[#1D1D1D]">jijohnissac@gmail.com</span>
               </div>
             </div>
 
-            {/* Vertical Separator (Only on Desktop) */}
             <div className="hidden sm:block w-[1px] h-8 bg-black/10"></div>
 
             {/* Contact */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-md bg-[#EBE7E8] border border-black/5 flex items-center justify-center flex-shrink-0 text-gray-500 shadow-sm">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">
-                  Contact
-                </span>
-                <span className="text-[11px] font-semibold text-[#1D1D1D]">
-                  +91 9345269742
-                </span>
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">Contact</span>
+                <span className="text-[11px] font-semibold text-[#1D1D1D]">+91 9345269742</span>
               </div>
             </div>
 
-            {/* Vertical Separator (Only on Desktop) */}
             <div className="hidden sm:block w-[1px] h-8 bg-black/10"></div>
 
             {/* Location */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-md bg-[#EBE7E8] border border-black/5 flex items-center justify-center flex-shrink-0 text-gray-500 shadow-sm">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">
-                  Location
-                </span>
-                <span className="text-[11px] font-semibold text-[#1D1D1D]">
-                  India
-                </span>
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">Location</span>
+                <span className="text-[11px] font-semibold text-[#1D1D1D]">India</span>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
