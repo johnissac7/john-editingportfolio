@@ -42,6 +42,7 @@ export const Header: React.FC = () => {
         <DesktopNav
           isMobileMenuOpen={isMobileMenuOpen}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
+          isScrolled={isScrolled}
         />
       </div>
 

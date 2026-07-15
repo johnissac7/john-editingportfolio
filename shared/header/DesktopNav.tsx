@@ -8,11 +8,13 @@ import HamburgerMenu from "./HamburgerMenu";
 interface DesktopNavProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (open: boolean) => void;
+  isScrolled: boolean;
 }
 
 export default function DesktopNav({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
+  isScrolled,
 }: DesktopNavProps) {
   return (
     <div className="relative w-full h-full flex items-center justify-between pointer-events-auto">
@@ -58,33 +60,15 @@ export default function DesktopNav({
       <div className="hidden md:flex items-center gap-4">
         <DesktopSocials />
       </div>
-
-      {/* =========================================
-          MOBILE ONLY: Integrated Right Floating Pill
-          - Combines Logo + Hamburger in one physical container.
-          - Floating offset matches page margins seamlessly.
-          ========================================= */}
-      <div className="md:hidden fixed top-4 right-4 flex items-center gap-3 bg-white/25 backdrop-blur-lg border border-black/[0.08] rounded-full pl-2 pr-4 py-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
-        {/* Round Logo Icon */}
-        <Link
-          href="/"
-          className="relative flex items-center justify-center w-[44px] h-[44px] overflow-hidden rounded-full border border-black/[0.04] bg-[#F2EFF0]"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          <Image
-            src="/jo-png.png"
-            alt="Jo Logo"
-            width={52}
-            height={52}
-            priority
-            className="object-cover w-full h-full scale-105"
-          />
-        </Link>
-
-        {/* Vertical Separator Line */}
-        <span className="w-[1px] h-4 bg-black/[0.08]" />
-
-        {/* Trigger Button */}
+      <div
+        className={`md:hidden fixed top-4 right-4 flex items-center justify-center w-12 h-12 bg-white/75 backdrop-blur-lg border border-black/[0.08] rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 ease-out
+    ${
+      isScrolled
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 -translate-y-4 pointer-events-none"
+    }`}
+      >
+        {/* Centered Trigger Button */}
         <div className="flex items-center justify-center w-6 h-6">
           <HamburgerMenu
             isMobileMenuOpen={isMobileMenuOpen}
