@@ -19,27 +19,23 @@ export default function DesktopNav({
   return (
     <div className="relative w-full h-full flex items-center justify-between pointer-events-auto">
       {/* =========================================
-          DESKTOP LEFT: Brand Logo & Wordmark (Hidden on Mobile)
+          DESKTOP LEFT: Clean Wordmark Only (No Image Circle)
           ========================================= */}
       <Link
         href="/"
-        className="hidden md:flex items-center gap-3.5 group transition-transform duration-300 active:scale-98"
+        className="hidden md:flex items-center group transition-transform duration-300 active:scale-98"
       >
         {/* 
-    DIALED BACK DESKTOP LOGO:
-    - Reduced from 80px to a balanced 62px (~22.5% reduction)
-    - Full-bleed circular crop maintained with object-cover
-  */}
-        <div className="relative overflow-hidden rounded-full flex items-center justify-center bg-transparent w-[62px] h-[62px] transition-all duration-300 border border-black/[0.04]">
-          <Image
-            src="/jo-png.png"
-            alt="Jo Logo"
-            width={80}
-            height={80}
-            priority
-            className="object-cover w-full h-full scale-105 transition-all duration-300"
-          />
-        </div>
+          If you want to keep the geometric logo icon from the image WITHOUT the circular background, 
+          you would swap out the file for a clean text-only markup or a cropped asset. 
+          Here, we restore the ultra-clean, bold Roboto wordmark directly.
+        */}
+        <span 
+          className="font-sans font-bold tracking-wide text-zinc-900 transition-all duration-300 group-hover:text-zinc-600 text-[19px]"
+          style={{ fontFamily: 'Roboto, sans-serif' }}
+        >
+          JohnIssac.
+        </span>
       </Link>
 
       {/* =========================================
@@ -57,16 +53,24 @@ export default function DesktopNav({
           </li>
         ))}
       </ol>
+
+      {/* =========================================
+          DESKTOP RIGHT: Socials
+          ========================================= */}
       <div className="hidden md:flex items-center gap-4">
         <DesktopSocials />
       </div>
+
+      {/* =========================================
+          MOBILE ONLY: Clean, Symmetrical Floating Trigger Circle
+          ========================================= */}
       <div
         className={`md:hidden fixed top-4 right-4 flex items-center justify-center w-12 h-12 bg-white/75 backdrop-blur-lg border border-black/[0.08] rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 ease-out
-    ${
-      isScrolled
-        ? "opacity-100 translate-y-0 pointer-events-auto"
-        : "opacity-0 -translate-y-4 pointer-events-none"
-    }`}
+        ${
+          isScrolled
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
       >
         {/* Centered Trigger Button */}
         <div className="flex items-center justify-center w-6 h-6">
