@@ -27,7 +27,7 @@ export const MotionGraphicsSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="bg-[#F2EFF0] pt-12 md:pt-14 pb-16 md:pb-20 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
+    <section className="bg-[#F2EFF0] pt-12 md:pt-14 pb-16 md:pb-20 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Main Section Header */}
         <div className="flex flex-col mb-12 md:mb-16">

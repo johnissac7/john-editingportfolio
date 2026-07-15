@@ -31,7 +31,7 @@ const workflowSteps = [
 
 export const HowIWorkSection: React.FC = () => {
   return (
-    <section className="bg-[#F2EFF0] pt-12 md:pt-14 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
+    <section id="services"className="bg-[#F2EFF0] pt-12 md:pt-14 pb-20 md:pb-24 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Header - Left Aligned */}
         <div className="flex flex-col mb-20 max-w-2xl">
