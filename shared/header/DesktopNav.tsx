@@ -23,19 +23,23 @@ export default function DesktopNav({
           ========================================= */}
       <Link
         href="/"
-        className="hidden md:flex items-center group transition-transform duration-300 active:scale-98"
+        className="hidden md:flex items-center gap-3.5 group transition-transform duration-300 active:scale-98"
       >
         {/* 
-          If you want to keep the geometric logo icon from the image WITHOUT the circular background, 
-          you would swap out the file for a clean text-only markup or a cropped asset. 
-          Here, we restore the ultra-clean, bold Roboto wordmark directly.
-        */}
-        <span 
-          className="font-sans font-bold tracking-wide text-zinc-900 transition-all duration-300 group-hover:text-zinc-600 text-[19px]"
-          style={{ fontFamily: 'Roboto, sans-serif' }}
-        >
-          JohnIssac.
-        </span>
+    SCALED UP BRAND CANVAS:
+    - Expanded width and height configurations to 76px.
+    - Set to 'object-cover' to allow the image asset to fill the space completely and bleed edge-to-edge.
+  */}
+        <div className="relative flex items-center justify-center bg-transparent w-[60px] h-[60px] transition-all duration-300">
+          <Image
+            src="/jo-png.png"
+            alt="Jo Logo"
+            width={96}
+            height={96}
+            priority
+            className="object-cover w-full h-full transition-all duration-300"
+          />
+        </div>
       </Link>
 
       {/* =========================================
