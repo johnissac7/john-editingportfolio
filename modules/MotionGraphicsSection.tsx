@@ -4,7 +4,11 @@ import React, { useRef, useState } from "react";
 
 export const MotionGraphicsSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+
+  // Video playback state
+  const [isPlaying, setIsPlaying] = useState(false);
+  // Audio toggle state (defaults to true/muted)
+  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -17,8 +21,12 @@ export const MotionGraphicsSection: React.FC = () => {
     }
   };
 
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevents the click from bubbling up and pausing the video
+    setIsMuted((prev) => !prev);
+  };
+
   return (
-    // ADJUSTMENT: Increased top padding (pt-14) to perfectly space it from the previous grid
     <section id="services" className="bg-[#F2EFF0] pt-12 md:pt-14 pb-16 md:pb-20 px-6 lg:px-16 xl:px-24 text-zinc-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Main Section Header */}
@@ -34,10 +42,12 @@ export const MotionGraphicsSection: React.FC = () => {
 
         {/* Two-Column Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
           {/* =========================================
               LEFT COLUMN: Title & Video (7/12 width)
               ========================================= */}
           <div className="lg:col-span-7 flex flex-col">
+
             {/* Redesigned Premium Title with WhatsApp Brand Hint */}
             <div className="flex items-center gap-3 mb-5 pl-1">
               <div className="relative flex h-2.5 w-2.5 mt-0.5">
@@ -49,31 +59,48 @@ export const MotionGraphicsSection: React.FC = () => {
               </h3>
             </div>
 
-            {/* Locked 16:9 Video Player */}
+            {/* Locked 16:9 Video Player Container */}
             <div
               className="relative w-full aspect-video rounded-2xl md:rounded-[2rem] overflow-hidden bg-zinc-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] ring-1 ring-black/5 group cursor-pointer"
               onClick={togglePlay}
             >
               <video
                 ref={videoRef}
-                src="/whatsapp-ad.mp4"
-                autoPlay
+                src="/motionGraphics/whatsappAd.mp4"
                 loop
-                muted
+                muted={isMuted} // Bound to React state
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               />
 
+              {/* Premium Audio Toggle Button (Bottom Right) */}
+              <button
+                onClick={toggleMute}
+                className={`absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-[0_4px_12px_rgba(0,0,0,0.1)] hover:bg-white/20 hover:scale-105 transition-all duration-300 ${isPlaying ? "opacity-100" : "opacity-0" // Hides when video is paused to keep UI clean
+                  }`}
+              >
+                {isMuted ? (
+                  // Volume Off Icon
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                  </svg>
+                ) : (
+                  // Volume On Icon
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  </svg>
+                )}
+              </button>
+
               {/* Premium Play/Pause Overlay */}
               <div
-                className={`absolute inset-0 bg-black/20 backdrop-blur-[2px] transition-opacity duration-500 flex items-center justify-center ${
-                  isPlaying
-                    ? "opacity-0 group-hover:opacity-100"
-                    : "opacity-100"
-                }`}
+                className={`absolute inset-0 bg-black/20 backdrop-blur-[2px] transition-opacity duration-500 flex items-center justify-center ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+                  }`}
               >
                 <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/20 transition-all duration-300 hover:scale-105">
                   {isPlaying ? (
+                    // Pause Icon
                     <svg
                       className="w-6 h-6 md:w-8 md:h-8 text-white"
                       fill="currentColor"
@@ -82,8 +109,9 @@ export const MotionGraphicsSection: React.FC = () => {
                       <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                     </svg>
                   ) : (
+                    // Play Icon (optically centered)
                     <svg
-                      className="w-6 h-6 md:w-8 md:h-8 text-white translate-x-1"
+                      className="w-6 h-6 md:w-8 md:h-8 text-white translate-x-0.5"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
