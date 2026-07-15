@@ -10,7 +10,6 @@ export const About: React.FC = () => {
 
         {/* =========================================
             MOBILE HERO HEADER: Section Labels & Title
-            Only renders on mobile to give structural authority before the profile grid
             ========================================= */}
         <div className="block lg:hidden flex flex-col">
           {/* Pre-heading */}
@@ -33,21 +32,22 @@ export const About: React.FC = () => {
         {/* =========================================
             LEFT COLUMN: DESKTOP IMAGE / MOBILE PROFILE AVATAR
             ========================================= */}
-        {/* MOBILE: Changes to an inline-profile component template
-            DESKTOP: Restores to the original aspect-[3/4] full-column grid layout
-        */}
         <div className="lg:col-span-5 flex lg:block items-center gap-6">
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-full lg:h-full lg:aspect-[4/5] md:lg:aspect-[3/4] rounded-full lg:rounded-[2rem] overflow-hidden shadow-sm flex-shrink-0 border border-black/5 lg:border-0">
             <Image
               src="/myself1.png"
               alt="JohnIssac Portrait"
               fill
-              className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+              // MOBILE FIX: Replaced 'object-center' with 'object-top lg:object-center'
+              // This aligns the top of the image to the top of the circle on mobile (sliding the face down), 
+              // while preserving the perfect center alignment on desktop.
+              // Note: If it goes too far down, you can tweak it by changing `object-top` to `object-[center_15%]`
+              className="object-cover object-top lg:object-center grayscale hover:grayscale-0 transition-all duration-700"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 
-          {/* Mobile Profile Subtext sitting neatly beside the new circular avatar */}
+          {/* Mobile Profile Subtext */}
           <div className="block lg:hidden flex flex-col gap-0.5">
             <span className="text-base font-bold text-black tracking-tight">JohnIssac</span>
             <span className="text-xs font-semibold text-[#B95D43] uppercase tracking-wider font-mono">Editor & Designer</span>
@@ -76,7 +76,7 @@ export const About: React.FC = () => {
             </h2>
           </div>
 
-          {/* Intro Paragraph - Sits beautifully under the profile section on mobile */}
+          {/* Intro Paragraph */}
           <p className="text-[18px] md:text-[22px] leading-[1.6] text-[#222222] font-medium max-w-2xl mb-8 mt-2 lg:mt-0">
             I'm <span className="font-bold text-black">JohnIssac</span>, a
             19-year-old Video Editor and Motion Designer building stories that{" "}
