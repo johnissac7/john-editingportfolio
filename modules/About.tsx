@@ -38,11 +38,10 @@ export const About: React.FC = () => {
               src="/myself1.png"
               alt="JohnIssac Portrait"
               fill
-              // MOBILE FIX: Replaced 'object-center' with 'object-top lg:object-center'
-              // This aligns the top of the image to the top of the circle on mobile (sliding the face down), 
-              // while preserving the perfect center alignment on desktop.
-              // Note: If it goes too far down, you can tweak it by changing `object-top` to `object-[center_15%]`
-              className="object-cover object-top lg:object-center grayscale hover:grayscale-0 transition-all duration-700"
+              // MOBILE FIX: Replaced 'object-top' with 'object-[center_20%]'
+              // This pans the focal point slightly down into the circle to prevent the top of the head from being cut off.
+              // 'lg:object-center' ensures the desktop view remains perfectly centered and untouched.
+              className="object-cover object-[center_20%] lg:object-center grayscale hover:grayscale-0 transition-all duration-700"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
