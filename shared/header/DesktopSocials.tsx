@@ -44,7 +44,7 @@ export default function DesktopSocials() {
 
       {/* Instagram Link - Default Zinc -> Hover Pink */}
       <a
-        href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
+        href="https://www.instagram.com/_spi.d.er?igsh=bnd5N3luZHZhODN6"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-900/60 hover:text-pink-500 transition-colors duration-300 select-none"

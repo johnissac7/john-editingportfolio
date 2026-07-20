@@ -80,7 +80,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/_jo.xhn?igsh=MWwzZjVtbnRlc2hndw=="
+                href="https://www.instagram.com/_spi.d.er?igsh=bnd5N3luZHZhODN6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3 outline-none"
